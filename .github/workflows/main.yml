@@ -1,0 +1,20 @@
+on: [push]
+
+jobs:
+  deploy_to_clouds:
+    runs-on: self-hosted
+    name: Portal Deploy
+    steps:        
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Kong Deploy Order API
+      uses: ./.github/actions/portal-deploy-action
+      with: 
+        kong-config-type: kong-for-kubernetes
+        external-service: silicon-ip-service
+        external-service-host: mockbin.org
+        openapi-spec: synopsys.yaml
+    - name: Deploy Dev Portal
+      run: |        
+        portal deploy default
+      

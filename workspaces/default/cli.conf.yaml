@@ -1,0 +1,7 @@
+# Kong Admin URL
+# @required
+kong_admin_url: http://34.74.172.193:8001
+
+# Kong Admin Token
+# @optional
+kong_admin_token: ''
