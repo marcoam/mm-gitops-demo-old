@@ -20,7 +20,7 @@ inputs:
   uid:
     description: 'System user id that will run processes'
     required: false
-    default: 502
+    default: 501
   gid:
     description: 'System group id that will run processes'
     required: false
