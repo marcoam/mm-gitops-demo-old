@@ -13,7 +13,7 @@ jobs:
         kong-config-type: kong-declarative-config
         external-service: silicon-ip-service
         external-service-host: mockbin.org
-        openapi-spec: synopsys.yaml
+        openapi-spec: orders.yaml
     - name: Deploy Dev Portal
       run: |        
         portal deploy default
