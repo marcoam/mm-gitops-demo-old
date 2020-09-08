@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Note that we're loading the variables $BINTRAY_USER/$BINTRAY_PASSWORD from the file ~/.bintray_docker
+source ~/.bintray_docker
+
 source env.sh
 
 # create and label the kuma namespace, so kuma will inject sidecars
@@ -31,6 +34,7 @@ helm install $RELEASE kong/kong \
 
 popd
 echo "Waiting for Kong EE to start..."
+#Note that we're using Python 3.X, if you're using a different one, then remove the "3"
 python3 wait.py -n $NAMESPACE -c 2 -l job-name!=$RELEASE-kong-init-migrations
 
 # enable dev portal on default workspace
