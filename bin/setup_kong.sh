@@ -31,7 +31,7 @@ helm install $RELEASE kong/kong \
 
 popd
 echo "Waiting for Kong EE to start..."
-python wait.py -n $NAMESPACE -c 2 -l job-name!=$RELEASE-kong-init-migrations
+python3 wait.py -n $NAMESPACE -c 2 -l job-name!=$RELEASE-kong-init-migrations
 
 # enable dev portal on default workspace
 curl -X PATCH http://localhost:8001/workspaces/default \
