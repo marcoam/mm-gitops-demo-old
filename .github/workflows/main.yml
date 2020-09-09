@@ -10,8 +10,8 @@ jobs:
     - name: Kong Deploy Order API
       uses: ./.github/actions/portal-deploy-action
       with: 
-        kong-config-type: kong-declarative-config
-        external-service: silicon-ip-service
+        kong-config-type: kong-for-kubernetes
+        external-service: pizza-order-service
         external-service-host: mockbin.org
         openapi-spec: orders.yaml
     - name: Deploy Dev Portal
