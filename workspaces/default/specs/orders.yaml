@@ -23,7 +23,7 @@ paths:
       x-kong-plugin-rate-limiting:
         enabled: true
         config:
-          minute: 18
+          minute: 17
           limit_by: ip
           policy: local      
       responses:
