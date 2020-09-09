@@ -16,10 +16,6 @@ paths:
       summary: Fetches an order
       tags:
         - order
-      x-kong-plugin-mocking:
-        enabled: true
-        config:
-          api_specification_filename: orders.yaml
       x-kong-plugin-rate-limiting:
         enabled: true
         config:
